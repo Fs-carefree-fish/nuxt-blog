@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "id": 53,
+      "title": "nuxt.js前端SSR踩坑（三）-----------axios的使用",
+      "introduce": "### 在nuxt.js中使用axios。\n#### 1、安装 \n```\nyarn add @nuxtjs/axios\n```\n#### 或者\n```\nnpm install @nuxtjs/axios\n```\n#### 在nuxt.config.js配置\n```\nmodule.exports = {\n  modules: [\n    '@nuxtjs/axios',\n  ],\n​\n  axios: {\n    // proxyHeaders: false\n  }\n}\n```",
+      "article_content": "### 在nuxt.js中使用axios。\n#### 1、安装 \n```\nyarn add @nuxtjs/axios\n```\n#### 或者\n```\nnpm install @nuxtjs/axios\n```\n#### 在nuxt.config.js配置\n```\nmodule.exports = {\n  modules: [\n    '@nuxtjs/axios',\n  ],\n​\n   axios: {\n    baseURL: 'http://192.168.1.107:3000'\n  },\n}\n```\n#### 在asyncData中 使用，将list返回暴露给组件，通过this.list访问\n```\nasync asyncData({ $axios }) {\n    const list = await $axios.$get(\"/list.json\");\n    return list;\n  }\n```\n#### 如果在正常的生命周期使用：\n```\nmethods: {\n  async fetchSomething() {\n    const ip = await this.$axios.$get('http://icanhazip.com')\n    this.ip = ip\n  }\n}\n```\n我在static目录下创建list.json文件夹，可以通过http://localhost:3000/list.json访问到mock数据。\n由于是ssr，一般在asyncData发送请求，也就是服务端。",
+      "addTime": "2020-02-23",
+      "view_count": 1033,
+      "typeName": "笔记总结",
+      "typeId": 3
+    }
+  ]
+}

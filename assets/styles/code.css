@@ -1,0 +1,23 @@
+pre{
+   display: block;
+   padding: 20px !important;
+   background-color: #283646 !important;
+   overflow-y: auto;
+   font-weight: 300;
+   font-family: Menlo, monospace;
+   border-radius: 6px;
+   max-height: 300px;
+   margin: 5px 0;
+}
+pre >code{
+  color:#FFF;
+}
+/* 博客里面的图片调整 */
+p > img{
+  margin: 20px 0;
+  width: 100%;
+  height:auto;
+}
+h1,h2,h3,h4,h5{
+  margin: 10px 0;
+}
